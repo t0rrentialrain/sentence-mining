@@ -1,0 +1,39 @@
+{
+  "anki_connect_url": "http://localhost:8765",
+
+  "note_type": "Korean Sentence Mining",
+  "field_map": {
+    "word": "wordForm",
+    "sentence": "sentence",
+    "sentence_audio": "sentenceAudio",
+    "picture": "picture",
+    "explanation": "explanation",
+    "explanation_audio": "explanationAudio",
+    "source_url": "source_url",
+    "previous_versions": "previous_versions"
+  },
+
+  "decks": {
+    "main": "Korean Sentence Cards",
+    "deferred": "Korean Sentence Mining Deferred"
+  },
+
+  "known_words": {
+    "interval_threshold": 21,
+    "cache_hours": 6,
+    "sources": [
+      { "query": "deck:\"Korean Sentence Cards\"", "field": "sentence" }
+    ]
+  },
+
+  "frequency_csv": "",
+
+  "banks": {
+    "source_dir": "~/Documents/sentence-banks",
+    "index_dir": "~/Downloads/sentence-mining/banks/index"
+  },
+
+  "anki_media_dir": "C:/Users/<YourUsername>/AppData/Roaming/Anki2/User 1/collection.media",
+
+  "work_dir": "~/Downloads/sentence-mining"
+}

@@ -1,0 +1,178 @@
+{
+  "_comment": "Korean grammar-pattern dictionary for the grammar-mining side-stream (scripts/grammar.py). Each pattern's `match` is an ordered list of token slots matched against consecutive positions in a kiwipiepy token list. `id` is written verbatim to Anki's word field (always leading dash). `priority` plays the same role as analyze.py's frequency_rank (lower = mine sooner) on a low numeric band (1-500) so foundational grammar isn't buried under mid-frequency vocab. This is a starter set (~20 patterns) proving out the schema for single-token endings, multi-token sequences, allomorphs, negation, and honorifics -- expand as gaps surface in real mining.",
+  "patterns": [
+    {
+      "id": "-이/가 아니다",
+      "priority": 8,
+      "match": [
+        { "tags": ["JKC", "JKS"], "forms": ["이", "가"], "optional": true },
+        { "tags": ["VCN"], "forms": ["아니"] }
+      ],
+      "example": "학생이 아니다."
+    },
+    {
+      "id": "-네요",
+      "priority": 7,
+      "match": [
+        { "tags": ["EF"], "forms": ["네요", "네"] }
+      ],
+      "example": "정말 예쁘네요."
+    },
+    {
+      "id": "-지 않다",
+      "priority": 12,
+      "match": [
+        { "tags": ["EC"], "forms": ["지"] },
+        { "tags": ["VX"], "forms": ["않"] }
+      ],
+      "example": "가지 않다."
+    },
+    {
+      "id": "-(으)면",
+      "priority": 10,
+      "match": [
+        { "tags": ["EC"], "forms": ["면", "으면"] }
+      ],
+      "example": "비가 오면 안 가요."
+    },
+    {
+      "id": "-고 있다",
+      "priority": 15,
+      "match": [
+        { "tags": ["EC"], "forms": ["고"] },
+        { "tags": ["VX", "VV"], "forms": ["있"] }
+      ],
+      "example": "밥을 먹고 있다."
+    },
+    {
+      "id": "-(으)ㄹ 것이다",
+      "priority": 18,
+      "match": [
+        { "tags": ["ETM"], "forms": ["ᆯ", "을", "ㄹ"] },
+        { "tags": ["NNB"], "forms": ["것", "거"] },
+        { "tags": ["VCP"], "forms": ["이"], "optional": true }
+      ],
+      "example": "내일 갈 거야."
+    },
+    {
+      "id": "-(으)ㄹ 수 있다",
+      "priority": 20,
+      "match": [
+        { "tags": ["ETM"], "forms": ["ᆯ", "을", "ㄹ"] },
+        { "tags": ["NNB"], "forms": ["수"] },
+        { "tags": ["VA", "VX"], "forms": ["있"] }
+      ],
+      "example": "갈 수 있어요."
+    },
+    {
+      "id": "-(으)ㄹ 수 없다",
+      "priority": 21,
+      "match": [
+        { "tags": ["ETM"], "forms": ["ᆯ", "을", "ㄹ"] },
+        { "tags": ["NNB"], "forms": ["수"] },
+        { "tags": ["VA", "VX"], "forms": ["없"] }
+      ],
+      "example": "갈 수 없어요."
+    },
+    {
+      "id": "-아/어야 하다",
+      "priority": 25,
+      "match": [
+        { "tags": ["EC"], "forms": ["아야", "어야", "여야"] },
+        { "tags": ["VX", "VV"], "forms": ["하"] }
+      ],
+      "example": "먹어야 하다."
+    },
+    {
+      "id": "-기 때문에",
+      "priority": 35,
+      "match": [
+        { "tags": ["ETN"], "forms": ["기"] },
+        { "tags": ["NNB"], "forms": ["때문"] },
+        { "tags": ["JKB"], "forms": ["에"], "optional": true }
+      ],
+      "example": "비가 오기 때문에 늦었어."
+    },
+    {
+      "id": "-(으)려고",
+      "priority": 45,
+      "match": [
+        { "tags": ["EC"], "forms": ["려고", "으려고"] }
+      ],
+      "example": "밥을 먹으려고 했어."
+    },
+    {
+      "id": "-는데",
+      "priority": 42,
+      "match": [
+        { "tags": ["EC"], "forms": ["는데"] }
+      ],
+      "example": "그거 하는데 힘들어."
+    },
+    {
+      "id": "-던데",
+      "priority": 140,
+      "match": [
+        { "tags": ["EC", "EF"], "forms": ["던데"] }
+      ],
+      "example": "생각보다 어렵던데."
+    },
+    {
+      "id": "-길래",
+      "priority": 118,
+      "match": [
+        { "tags": ["EC"], "forms": ["길래", "기에"] }
+      ],
+      "example": "이거 먹었길래 물어봤어."
+    },
+    {
+      "id": "-잖아(요)",
+      "priority": 55,
+      "match": [
+        { "tags": ["EF", "EC"], "forms": ["잖아", "잖아요", "잖니"] }
+      ],
+      "example": "내가 말했잖아."
+    },
+    {
+      "id": "-(느)ㄴ지",
+      "priority": 60,
+      "match": [
+        { "tags": ["EC", "EF"], "forms": ["는지", "은지", "ㄴ지"] }
+      ],
+      "example": "뭘 먹었는지 모르겠어."
+    },
+    {
+      "id": "-도록",
+      "priority": 80,
+      "match": [
+        { "tags": ["EC"], "forms": ["도록"] }
+      ],
+      "example": "늦지 않도록 서둘러."
+    },
+    {
+      "id": "-아/어 보다",
+      "priority": 30,
+      "match": [
+        { "tags": ["EC"], "forms": ["아", "어", "여"] },
+        { "tags": ["VX"], "forms": ["보"] }
+      ],
+      "example": "한번 먹어 보세요."
+    },
+    {
+      "id": "-(으)세요",
+      "priority": 5,
+      "match": [
+        { "tags": ["EF", "EC"], "forms": ["세요", "으세요"] }
+      ],
+      "example": "여기 앉으세요."
+    },
+    {
+      "id": "-아/어서",
+      "priority": 6,
+      "match": [
+        { "tags": ["EC"], "forms": ["아서", "어서", "여서", "해서"] }
+      ],
+      "example": "바빠서 못 갔어요."
+    }
+  ]
+}
