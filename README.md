@@ -30,8 +30,12 @@ Every mode talks to Anki through the **AnkiConnect** API.
 
 ## Setup
 
+```bash
+git clone https://github.com/t0rrentialrain/sentence-mining ~/.claude/skills/sentence-mining
+```
+
 1. Install [AnkiConnect](https://ankiweb.net/shared/info/2055492159) in Anki.
-2. `pip install kiwipiepy yt-dlp`
+2. `pip install -r requirements.txt` (also needs `ffmpeg` on your PATH)
 3. Copy `.env.example` to `.env` and add your API keys.
 4. Run `/sentence-mining setup` in Claude Code, or `python scripts/setup.py`, to generate
    `config.json` with your note type and decks.

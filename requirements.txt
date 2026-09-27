@@ -1,0 +1,4 @@
+kiwipiepy
+requests
+yt-dlp
+google-genai  # optional: generated media (GEMINI_API_KEY)
